@@ -57,6 +57,7 @@ const CampaignBattleLogsList = forwardRef<CampaignBattleLogsListRef, CampaignBat
   const [availableGangs, setAvailableGangs] = useState<CampaignGang[]>([]);
   const [showNoteModal, setShowNoteModal] = useState(false);
   const [activeNote, setActiveNote] = useState<string | null>(null);
+  const [activeNarrative, setActiveNarrative] = useState<string | null>(null);
   const { toast } = useToast();
   const router = useRouter();
 
@@ -943,10 +944,11 @@ const CampaignBattleLogsList = forwardRef<CampaignBattleLogsListRef, CampaignBat
                   </td>
 
                   <td className="p-1 md:p-2 align-top">
-                    {battle.note && (
+                    {(battle.note || battle.narrative) && (
                       <button
                         onClick={() => {
-                          setActiveNote(battle.note || '');
+                          setActiveNote(battle.note || null);
+                          setActiveNarrative(battle.narrative || null);
                           setShowNoteModal(true);
                         }}
                         className="text-muted-foreground hover:text-foreground"
@@ -1065,17 +1067,29 @@ const CampaignBattleLogsList = forwardRef<CampaignBattleLogsListRef, CampaignBat
         <Modal
           title="Battle Report"
           content={
-            <div className="whitespace-pre-wrap text-sm text-foreground">
-              {activeNote}
+            <div className="space-y-3">
+              {activeNote && (
+                <div className="whitespace-pre-wrap text-sm text-foreground">
+                  {activeNote}
+                </div>
+              )}
+              {activeNarrative && (
+                <div className={activeNote ? "border-t border-border pt-3" : ""}>
+                  <p className="text-xs font-semibold text-muted-foreground mb-1 uppercase tracking-wide">AI Narrative</p>
+                  <p className="text-sm italic text-muted-foreground">{activeNarrative}</p>
+                </div>
+              )}
             </div>
           }
           onClose={() => {
             setShowNoteModal(false);
             setActiveNote(null);
+            setActiveNarrative(null);
           }}
           onConfirm={() => {
             setShowNoteModal(false);
             setActiveNote(null);
+            setActiveNarrative(null);
           }}
           confirmText="Close"
           hideCancel

@@ -126,10 +126,10 @@ export default function WhatIsMundaManager({ userCount, gangCount, campaignCount
       <section className="bg-muted p-4 rounded-lg">
         <h2 className="text-lg font-semibold mb-2">Ready to Get Started?</h2>
         <p className="text-muted-foreground mb-3">
-          <Link href="/sign-up" className="text-primary font-semibold underline hover:text-primary/80">
-            Sign up
+          <Link href="/sign-in" className="text-primary font-semibold underline hover:text-primary/80">
+            Sign in with Discord
           </Link>{" "}
-          now and start managing your gangs and campaigns.
+          to start managing your gangs and campaigns.
         </p>
       </section>
     </div>

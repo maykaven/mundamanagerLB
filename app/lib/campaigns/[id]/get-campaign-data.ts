@@ -436,7 +436,8 @@ async function _getCampaignBattles(campaignId: string, supabase: SupabaseClient,
       scenario_id,
       territory_id,
       custom_territory_id,
-      cycle
+      cycle,
+      narrative
     `)
     .eq('campaign_id', campaignId)
     .order('created_at', { ascending: false })

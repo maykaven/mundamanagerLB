@@ -14,7 +14,7 @@ import MembersTable from "@/components/campaigns/[id]/campaign-members-table"
 import CampaignBattleLogsList from "@/components/campaigns/[id]/campaign-battle-logs-list";
 import { FiMap, FiCamera, FiShare2 } from "react-icons/fi";
 import { MdFactory } from "react-icons/md";
-import { LuSwords, LuTrophy, LuCodeXml } from "react-icons/lu";
+import { LuSwords, LuTrophy, LuCodeXml, LuScroll } from "react-icons/lu";
 import { FaBook } from "react-icons/fa";
 import { ImInfo } from "react-icons/im";
 import CampaignTerritoryList from "@/components/campaigns/[id]/campaign-territory-list";
@@ -22,6 +22,7 @@ import CampaignAddTerritoryModal from "@/components/campaigns/[id]/campaign-add-
 import { CampaignBattleLogsListRef } from "@/components/campaigns/[id]/campaign-battle-logs-list";
 import CampaignEditModal from "@/components/campaigns/[id]/campaign-edit-modal";
 import CampaignTriumphs from "@/components/campaigns/[id]/campaign-triumphs";
+import CampaignTimeline from "@/components/campaigns/[id]/campaign-timeline";
 import type { CampaignPermissions } from '@/types/user-permissions';
 import type { Battle } from '@/types/campaign';
 import { updateCampaignSettings } from "@/app/actions/campaigns/[id]/campaign-settings";
@@ -450,6 +451,17 @@ export default function CampaignPageContent({
           >
             <LuTrophy className="size-4" />
             <span className="ml-2 hidden sm:inline">Triumphs</span>
+          </button>
+          <button
+            onClick={() => setActiveTab(5)}
+            className={`flex-1 py-4 text-center transition-colors ${
+              activeTab === 5
+                ? 'text-foreground font-medium'
+                : 'text-muted-foreground hover:text-muted-foreground'
+            } flex items-center justify-center`}
+          >
+            <LuScroll className="size-4" />
+            <span className="ml-2 hidden sm:inline">Timeline</span>
           </button>
         </div>
         
@@ -885,6 +897,18 @@ export default function CampaignPageContent({
                   <h2 className="text-xl md:text-2xl font-bold">Triumphs</h2>
                 </div>
                 <CampaignTriumphs triumphs={campaignData.triumphs || []} />
+              </div>
+            </div>
+          )}
+
+          {/* Timeline tab content */}
+          {activeTab === 5 && (
+            <div className="bg-card shadow-md rounded-lg p-4">
+              <div>
+                <div className="flex justify-between items-start mb-4">
+                  <h2 className="text-xl md:text-2xl font-bold">Timeline</h2>
+                </div>
+                <CampaignTimeline campaignId={campaignData.id} />
               </div>
             </div>
           )}

@@ -33,6 +33,7 @@ export interface Battle {
   defender_id?: string;
   winner_id?: string | null;
   note?: string | null;
+  narrative?: string | null;
   participants?: BattleParticipant[] | string;
   territory_id?: string | null;
   custom_territory_id?: string | null;

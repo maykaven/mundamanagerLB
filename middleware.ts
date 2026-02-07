@@ -11,7 +11,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // Auth pages - check if user is already logged in and redirect away
-  const authPages = ['/sign-in', '/sign-up'];
+  const authPages = ['/sign-in'];
 
   if (authPages.includes(pathname)) {
     // Create minimal Supabase client for auth check only
@@ -42,8 +42,6 @@ export async function middleware(request: NextRequest) {
   // Public pages - accessible to everyone, no auth check
   const publicPaths = [
     '/auth/callback',
-    '/reset-password',
-    '/reset-password/update',
     '/user-guide',
     '/about',
     '/contributors',
@@ -54,13 +52,8 @@ export async function middleware(request: NextRequest) {
     '/merch'
   ];
 
-  // Check for password reset flow
-  const isPasswordResetFlow =
-    pathname.startsWith('/reset-password') ||
-    pathname.startsWith('/auth/callback');
-
   // Early return for public paths - avoid creating Supabase client unnecessarily
-  if (publicPaths.includes(pathname) || isPasswordResetFlow) {
+  if (publicPaths.includes(pathname) || pathname.startsWith('/auth/callback')) {
     return NextResponse.next({ request });
   }
 

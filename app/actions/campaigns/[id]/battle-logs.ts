@@ -236,13 +236,71 @@ export async function createBattleLog(campaignId: string, params: BattleLogParam
     }
 
     // Transform the response to match the expected format
-    const transformedBattle = {
+    const transformedBattle: Record<string, any> = {
       ...battle,
       cycle: battle.cycle,
       attacker: attacker?.name ? { id: attacker_id, name: attacker.name } : undefined,
       defender: defender?.name ? { id: defender_id, name: defender.name } : undefined,
       winner: winner?.name ? { id: winner_id, name: winner.name } : undefined
     };
+
+    // Generate AI narrative (non-blocking — never fails the battle creation)
+    try {
+      const { generateBattleNarrative } = await import('@/utils/narrative');
+      const { createServiceRoleClient } = await import('@/utils/supabase/server');
+      const serviceClient = createServiceRoleClient();
+
+      // Fetch gang_type for attacker and defender
+      const gangIds = [attacker_id, defender_id].filter(Boolean);
+      const { data: gangTypes } = await supabase
+        .from('gangs')
+        .select('id, gang_type')
+        .in('id', gangIds);
+      const gangTypeMap = new Map(gangTypes?.map((g: any) => [g.id, g.gang_type]) || []);
+
+      const winnerName = winner?.name || attacker?.name || 'Unknown';
+      const winnerId = winner_id || attacker_id;
+      const loserId = winner_id === attacker_id ? defender_id : attacker_id;
+      const loserName = winner_id === attacker_id ? defender?.name : attacker?.name;
+
+      const context = {
+        winnerGang: winnerName,
+        winnerHouse: gangTypeMap.get(winnerId) || 'Unknown',
+        loserGang: loserName || 'Unknown',
+        loserHouse: gangTypeMap.get(loserId) || 'Unknown',
+        scenario: scenario || undefined,
+        isDraw: winner_id === null,
+      };
+
+      const narrativeText = await generateBattleNarrative(context);
+
+      // Write to both campaign_battles and campaign_narratives
+      await Promise.all([
+        serviceClient
+          .from('campaign_battles')
+          .update({ narrative: narrativeText })
+          .eq('id', battle.id),
+        serviceClient
+          .from('campaign_narratives')
+          .insert({
+            campaign_id: campaignId,
+            narrative_type: 'BATTLE',
+            narrative_text: narrativeText,
+            related_battle_id: battle.id,
+            metadata: {
+              scenario,
+              winner: winner?.name || null,
+              attacker: attacker?.name || null,
+              defender: defender?.name || null,
+              isDraw: winner_id === null,
+            },
+          }),
+      ]);
+
+      transformedBattle.narrative = narrativeText;
+    } catch (narrativeError) {
+      console.error('Failed to generate narrative (non-blocking):', narrativeError);
+    }
 
     // 🎯 Invalidate cache - battles and territories if claimed
     const { revalidateTag } = await import('next/cache');

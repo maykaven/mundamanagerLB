@@ -1,7 +1,5 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import PasswordChange from "@/components/password-change";
-import EmailChange from "@/components/account/email-change";
 import UsernameChange from "@/components/account/username-change";
 import { NotificationsSection } from "@/components/settings-modal";
 import FriendsSearchBar from "@/components/account/friends";
@@ -78,22 +76,6 @@ export default async function AccountPage() {
               </div>
             </div>
             
-            {/* Email */}
-            <div>
-              <label className="block text-sm font-medium text-muted-foreground mb-1">
-                Email
-              </label>
-              <EmailChange currentEmail={user.email || ''} />
-            </div>
-
-            {/* Password */}
-            <div>
-              <label className="block text-sm font-medium text-muted-foreground mb-1">
-                Password
-              </label>
-              <PasswordChange />
-            </div>
-
           </div>
 
           <div className="mt-4 flex flex-row item-center justify-between text-xs text-muted-foreground">
