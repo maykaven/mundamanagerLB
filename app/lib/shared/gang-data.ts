@@ -1795,7 +1795,8 @@ export const getGangFightersList = async (
             wargear_id: item.equipment_id || item.custom_equipment_id || '',
             wargear_name: item.equipment_name,
             cost: item.purchase_cost || 0,
-            is_master_crafted: item.is_master_crafted || false
+            is_master_crafted: item.is_master_crafted || false,
+            equipment_category: item.equipment_category || ''
           }));
 
         // Get fighter type info from the join

@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { Weapon, WeaponProfile } from '@/types/equipment';
+import { TraitBadgeList } from '@/components/ui/trait-badge';
 
 interface WeaponTableProps {
   weapons: Weapon[];
@@ -225,7 +226,10 @@ const WeaponTable: React.FC<WeaponTableProps> = ({ weapons, entity, viewMode }) 
               const traitsList: string[] = [];
 
               if (entity === 'crew') traitsList.push('Arc (Front)');
-              if (profile.traits) traitsList.push(profile.traits);
+              // Split comma-separated traits into individual entries
+              if (profile.traits) {
+                profile.traits.split(',').map(t => t.trim()).filter(Boolean).forEach(t => traitsList.push(t));
+              }
               // Only add Master-crafted trait to profiles that are actually master-crafted, not to ammo
               if (profile.is_master_crafted) traitsList.push('Master-crafted');
 
@@ -274,7 +278,7 @@ const WeaponTable: React.FC<WeaponTableProps> = ({ weapons, entity, viewMode }) 
                     {formatters.formatAmmo(profile.ammo)}
                   </td>
                   <td className={`${pClass} text-left border-l border-black whitespace-normal align-top`}>
-                    {traitsList.join(', ')}
+                    <TraitBadgeList traits={traitsList} type="weapon" />
                   </td>
                 </tr>
               );

@@ -250,7 +250,7 @@ export function PwaInstallButton() {
           content={
             <div className="space-y-4 text-sm">
               <p>
-                Munda Manager can be installed as a mobile app on your phone or tablet (Android & iOS).
+                Linebreakers can be installed as a mobile app on your phone or tablet (Android & iOS).
                 Open this site in any browser and click on this button again to install it on your device.
               </p>
               <div className="rounded-md border p-3 bg-muted">

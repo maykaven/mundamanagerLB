@@ -9,10 +9,10 @@ const defaultUrl = process.env.NODE_ENV === 'development'
   : "https://www.mundamanager.com";
 
 // SEO constants - edit these to update all metadata
-const PAGE_TITLE = 'API Access - Munda Manager REST API Documentation';
-const PAGE_DESCRIPTION = 'Access your Munda Manager campaign data as XML or JSON. Integrate live campaign information into your own tools, dashboards, or spreadsheets with our REST API for Necromunda campaigns.';
-const PAGE_DESCRIPTION_SHORT = 'Access your Munda Manager campaign data as XML or JSON. Integrate live information into your own tools and spreadsheets.';
-const PAGE_KEYWORDS = 'Munda Manager API, Necromunda API, campaign data API, XML export, JSON export, Google Sheets integration, campaign tracking';
+const PAGE_TITLE = 'API Access - Linebreakers REST API Documentation';
+const PAGE_DESCRIPTION = 'Access your Linebreakers campaign data as XML or JSON. Integrate live campaign information into your own tools, dashboards, or spreadsheets with our REST API for Necromunda campaigns.';
+const PAGE_DESCRIPTION_SHORT = 'Access your Linebreakers campaign data as XML or JSON. Integrate live information into your own tools and spreadsheets.';
+const PAGE_KEYWORDS = 'Linebreakers API, Necromunda API, campaign data API, XML export, JSON export, Google Sheets integration, campaign tracking';
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION_SHORT,
     url: `${defaultUrl}/api-access`,
     type: 'article',
-    siteName: 'Munda Manager',
+    siteName: 'Linebreakers',
   },
   twitter: {
     card: 'summary_large_image',
@@ -43,11 +43,11 @@ export default function ApiAccessPage() {
     "description": PAGE_DESCRIPTION,
     "author": {
       "@type": "Organization",
-      "name": "Munda Manager Team"
+      "name": "Linebreakers Team"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Munda Manager",
+      "name": "Linebreakers",
       "logo": {
         "@type": "ImageObject",
         "url": `${defaultUrl}/images/favicon-192x192.png`
@@ -81,7 +81,7 @@ export default function ApiAccessPage() {
           
           <div className="mb-8">
             <p className="text-muted-foreground mb-4">
-              Munda Manager does not currently provide API keys for full programmatic access to all data. However, we do offer a <strong className="text-foreground">public REST API for campaign data</strong>, allowing you to retrieve campaign information as XML or JSON without authentication.
+              Linebreakers does not currently provide API keys for full programmatic access to all data. However, we do offer a <strong className="text-foreground">public REST API for campaign data</strong>, allowing you to retrieve campaign information as XML or JSON without authentication.
             </p>
             <p className="text-muted-foreground mb-4">
               We plan to extend API access to other parts of the app in the future, such as gang data and fighter information. Stay tuned for updates!
@@ -91,7 +91,7 @@ export default function ApiAccessPage() {
           <div className="mb-8">
             <h2 className="text-2xl font-semibold text-foreground mb-2">Campaign Data as XML and JSON</h2>
             <p className="text-muted-foreground mb-4">
-              Munda Manager now lets you access your campaign data as <strong className="text-foreground">XML or JSON</strong>, making it easy to plug live information into your own tools, dashboards, or spreadsheets.
+              Linebreakers now lets you access your campaign data as <strong className="text-foreground">XML or JSON</strong>, making it easy to plug live information into your own tools, dashboards, or spreadsheets.
             </p>
             <p className="text-muted-foreground mb-4">
               If you run a campaign and want full control over tracking gang wealth, territories, ratings, or overall progress outside the app, this provides a clean, structured REST API designed for external use, with no authentication required.
@@ -105,19 +105,19 @@ export default function ApiAccessPage() {
           <div className="mb-12">
             <h2 className="text-xl font-semibold text-foreground mb-2">Contents</h2>
             <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
-              <li><a href="#google-sheets-integration" className="underline hover:text-red-800">How to Access Your Campaign Data from Google Sheets</a></li>
+              <li><a href="#google-sheets-integration" className="underline hover:text-primary">How to Access Your Campaign Data from Google Sheets</a></li>
               <li>
                 <span className="text-muted-foreground">Examples:</span>
                 <ul className="list-disc marker:text-red-800 pl-6 mt-2 space-y-1">
-                  <li><a href="#get-campaign-name" className="underline hover:text-red-800">Get the Campaign Name</a></li>
-                  <li><a href="#get-all-gang-names" className="underline hover:text-red-800">Get All Gang Names</a></li>
-                  <li><a href="#get-gang-rating" className="underline hover:text-red-800">Get the Rating of a Gang by ID</a></li>
-                  <li><a href="#get-gang-territories" className="underline hover:text-red-800">Get the Territories of a Gang by ID</a></li>
-                  <li><a href="#get-gang-wealth-dynamic" className="underline hover:text-red-800">Get the Wealth of a Gang Using a Cell Reference</a></li>
+                  <li><a href="#get-campaign-name" className="underline hover:text-primary">Get the Campaign Name</a></li>
+                  <li><a href="#get-all-gang-names" className="underline hover:text-primary">Get All Gang Names</a></li>
+                  <li><a href="#get-gang-rating" className="underline hover:text-primary">Get the Rating of a Gang by ID</a></li>
+                  <li><a href="#get-gang-territories" className="underline hover:text-primary">Get the Territories of a Gang by ID</a></li>
+                  <li><a href="#get-gang-wealth-dynamic" className="underline hover:text-primary">Get the Wealth of a Gang Using a Cell Reference</a></li>
                 </ul>
               </li>
-              <li><a href="#usage-guidelines" className="underline hover:text-red-800">Usage Guidelines</a></li>
-              <li><a href="#support" className="underline hover:text-red-800">Support</a></li>
+              <li><a href="#usage-guidelines" className="underline hover:text-primary">Usage Guidelines</a></li>
+              <li><a href="#support" className="underline hover:text-primary">Support</a></li>
             </ul>
           </div>
 
@@ -136,9 +136,9 @@ export default function ApiAccessPage() {
                   href="https://www.mundamanager.com/campaigns/4a2ab55f-ec68-44ab-9572-e0f68e2450d0" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="underline hover:text-red-800"
+                  className="underline hover:text-primary"
                 >
-                  View this campaign on Munda Manager →
+                  View this campaign on Linebreakers →
                 </a>
               </p>
 
@@ -252,7 +252,7 @@ Gang Sympathisers`}</code></pre>
             <section id="usage-guidelines" className="scroll-mt-24">
               <h2 className="text-2xl font-semibold text-foreground mb-1">Usage Guidelines</h2>
               <p className="text-muted-foreground mb-4">
-                When using the Munda Manager API, please follow these guidelines:
+                When using the Linebreakers API, please follow these guidelines:
               </p>
               <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
                 <li className="text-muted-foreground">
@@ -262,7 +262,7 @@ Gang Sympathisers`}</code></pre>
                   <strong className="text-foreground">Caching:</strong> Cache responses locally when possible to reduce load on our servers and improve your application's performance.
                 </li>
                 <li className="text-muted-foreground">
-                  <strong className="text-foreground">Attribution:</strong> If you display campaign data publicly, please provide attribution to Munda Manager.
+                  <strong className="text-foreground">Attribution:</strong> If you display campaign data publicly, please provide attribution to Linebreakers.
                 </li>
                 <li className="text-muted-foreground">
                   <strong className="text-foreground">No commercial use:</strong> The API is provided for personal and community use. Commercial applications require prior approval.
@@ -277,7 +277,7 @@ Gang Sympathisers`}</code></pre>
               <h2 className="text-2xl font-semibold text-foreground mb-1">Support</h2>
               <p className="text-muted-foreground mb-2">
                 If you have questions about the API, need assistance with your integration, or want to report bugs and request features, please reach out through our{' '}
-                <Link href="/contact" className="underline hover:text-red-800">
+                <Link href="/contact" className="underline hover:text-primary">
                   contact page
                 </Link>{' '}
                 or join our{' '}
@@ -285,7 +285,7 @@ Gang Sympathisers`}</code></pre>
                   href="https://discord.gg/ZWXXqd5NUt" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="underline hover:text-red-800"
+                  className="underline hover:text-primary"
                 >
                   Discord server
                 </a>

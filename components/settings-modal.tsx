@@ -17,7 +17,7 @@ import dynamic from 'next/dynamic';
 
 // Icons
 import { LuSettings, LuLogOut, LuUser, LuMenu } from "react-icons/lu";
-import { FaUsers, FaDiscord, FaPatreon, FaGithub } from "react-icons/fa6";
+import { FaUsers, FaGithub } from "react-icons/fa6";
 import { FiMap } from "react-icons/fi";
 import { MdOutlineColorLens } from "react-icons/md";
 import { TbDiamondFilled } from "react-icons/tb";
@@ -179,18 +179,8 @@ export default function SettingsModal({ user, isAdmin, username, patreonTierId, 
 
           <div className="pb-1">
             <div className="flex gap-2">
-              <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick} className="flex justify-center items-center px-2 py-1 text-sm rounded-md hover:bg-muted">
-                <FaDiscord className="h-4 w-4" />
-
-              </a>
-              <a href="https://www.patreon.com/c/mundamanager" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick} className="flex justify-center items-center px-2 py-1 text-sm rounded-md hover:bg-muted">
-                <FaPatreon className="h-4 w-4" />
-
-              </a>
-
-              <a href="https://github.com/joeseos/mundamanager" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick} className="flex justify-center items-center px-2 py-1 text-sm rounded-md hover:bg-muted">
+              <a href="https://github.com/maykaven/mundamanagerLB" target="_blank" rel="noopener noreferrer" onClick={handleLinkClick} className="flex justify-center items-center px-2 py-1 text-sm rounded-md hover:bg-muted">
                 <FaGithub className="h-4 w-4" />
-
               </a>
             </div>
           </div>

@@ -26,6 +26,7 @@ type FighterStats = {
   'W': number;
   'I': string;
   'A': number;
+  'Sv': string;
   'Ld': string;
   'Cl': string;
   'Wil': string;
@@ -79,7 +80,7 @@ export function StatsTable({ data, isCrew, viewMode }: StatsTableProps) {
   // Define the order of stats based on fighter type
   const statOrder = isCrew
     ? ['M', 'Front', 'Side', 'Rear', 'HP', 'Hnd', 'Sv', 'BS', 'Ld', 'Cl', 'Wil', 'Int', 'XP'] as const
-    : ['M', 'WS', 'BS', 'S', 'T', 'W', 'I', 'A', 'Ld', 'Cl', 'Wil', 'Int', 'XP'] as const;
+    : ['M', 'WS', 'BS', 'S', 'T', 'W', 'I', 'A', 'Sv', 'Ld', 'Cl', 'Wil', 'Int', 'XP'] as const;
 
   // Type guard to check if data is CrewStats
   const isCrewStats = (data: StatsType): data is CrewStats => {
@@ -128,8 +129,9 @@ export function StatsTable({ data, isCrew, viewMode }: StatsTableProps) {
       if (key === 'Rear') return 'border-r-[1px] border-[#a05236]';
       if (key === 'BS') return 'border-l-[1px] border-[#a05236]';
     } else {
+      if (key === 'Sv') return 'border-l-[1px] border-[#a05236]';
       if (key === 'Ld') return 'border-l-[1px] border-[#a05236]';
-      }
+    }
 
     if (key === 'XP') return 'border-l-[1px] border-[#a05236]';
     return '';

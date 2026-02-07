@@ -6,10 +6,10 @@ const defaultUrl = process.env.NODE_ENV === 'development'
   ? "http://localhost:3000"
   : "https://www.mundamanager.com";
 
-const PAGE_TITLE = 'Join the Team - Munda Manager';
-const PAGE_DESCRIPTION = 'Join the Munda Manager team! Learn how you can contribute to this community-driven Necromunda gang and campaign management tool.';
-const PAGE_DESCRIPTION_SHORT = 'Join the Munda Manager team! Learn how you can contribute to this community-driven project.';
-const PAGE_KEYWORDS = 'Munda Manager contributors, join team, contribute, open source, volunteer';
+const PAGE_TITLE = 'Join the Team - Linebreakers';
+const PAGE_DESCRIPTION = 'Join the Linebreakers team! Learn how you can contribute to this community-driven Necromunda gang and campaign management tool.';
+const PAGE_DESCRIPTION_SHORT = 'Join the Linebreakers team! Learn how you can contribute to this community-driven project.';
+const PAGE_KEYWORDS = 'Linebreakers contributors, join team, contribute, open source, volunteer';
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION_SHORT,
     url: `${defaultUrl}/join-the-team`,
     type: 'article',
-    siteName: 'Munda Manager',
+    siteName: 'Linebreakers',
   },
   twitter: {
     card: 'summary_large_image',
@@ -40,11 +40,11 @@ export default function JoinTheTeamPage() {
     "description": PAGE_DESCRIPTION,
     "author": {
       "@type": "Organization",
-      "name": "Munda Manager Team"
+      "name": "Linebreakers Team"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Munda Manager",
+      "name": "Linebreakers",
       "logo": {
         "@type": "ImageObject",
         "url": `${defaultUrl}/images/favicon-192x192.png`
@@ -78,7 +78,7 @@ export default function JoinTheTeamPage() {
             
             <div className="mb-8">
               <p className="text-muted-foreground mb-2">
-                Munda Manager is a community-driven project, and we're always looking for passionate individuals to help make it even better! Whether you're a developer, designer, content creator, or just someone who loves Necromunda, there are many ways to contribute.
+                Linebreakers is a community-driven project, and we're always looking for passionate individuals to help make it even better! Whether you're a developer, designer, content creator, or just someone who loves Necromunda, there are many ways to contribute.
               </p>
               <p className="text-muted-foreground mb-2">
                 We're looking for people who can take ownership, show initiative, and are keen to contribute! <strong className="text-foreground">Some of these tasks can be time-consuming and may need daily attention</strong>, so please keep that in mind. But if you're passionate about Necromunda and active online, you'll fit right in!
@@ -89,7 +89,7 @@ export default function JoinTheTeamPage() {
               <section id="why-contribute" className="scroll-mt-24">
                 <h2 className="text-xl font-semibold text-foreground mb-1">Why Contribute?</h2>
                 <p className="text-muted-foreground mb-2">
-                  By contributing to Munda Manager, you're helping build a tool that serves the entire Necromunda community. Your contributions help:
+                  By contributing to Linebreakers, you're helping build a tool that serves the entire Necromunda community. Your contributions help:
                 </p>
                 <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
                   <li className="text-muted-foreground">Make gang and campaign management easier for players worldwide</li>
@@ -105,7 +105,7 @@ export default function JoinTheTeamPage() {
                 
                 <h3 className="text-lg font-semibold text-foreground mt-4 mb-2">Development</h3>
                 <p className="text-muted-foreground mb-2">
-                  Help us build and improve Munda Manager's features:
+                  Help us build and improve Linebreakers's features:
                 </p>
                 <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
                   <li className="text-muted-foreground">Fix bugs and improve existing features</li>
@@ -115,7 +115,7 @@ export default function JoinTheTeamPage() {
                   <li className="text-muted-foreground">Review pull requests from other contributors</li>
                 </ul>
                 <p className="text-muted-foreground mb-2 mt-4">
-                  Our tech stack includes Next.js, React, TypeScript, Supabase, and Tailwind CSS. Check out our <a href="https://github.com/joeseos/mundamanager" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-800">GitHub repository</a> to get started.
+                  Our tech stack includes Next.js, React, TypeScript, Supabase, and Tailwind CSS. Check out our <a href="https://github.com/joeseos/mundamanager" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">GitHub repository</a> to get started.
                 </p>
 
                 <h3 className="text-lg font-semibold text-foreground mt-6 mb-2">Design & UX</h3>
@@ -131,10 +131,10 @@ export default function JoinTheTeamPage() {
 
                 <h3 className="text-lg font-semibold text-foreground mt-6 mb-2">Documentation</h3>
                 <p className="text-muted-foreground mb-2">
-                  Help users understand and use Munda Manager better:
+                  Help users understand and use Linebreakers better:
                 </p>
                 <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
-                  <li className="text-muted-foreground">Update and improve the <Link href="/user-guide" className="underline hover:text-red-800">User Guide</Link></li>
+                  <li className="text-muted-foreground">Update and improve the <Link href="/user-guide" className="underline hover:text-primary">User Guide</Link></li>
                   <li className="text-muted-foreground">Write code documentation and comments</li>
                   <li className="text-muted-foreground">Create tutorials and guides</li>
                   <li className="text-muted-foreground">Help answer questions in Discord</li>
@@ -142,7 +142,7 @@ export default function JoinTheTeamPage() {
 
                 <h3 className="text-lg font-semibold text-foreground mt-6 mb-2">Testing & Quality Assurance</h3>
                 <p className="text-muted-foreground mb-2">
-                  Help ensure Munda Manager works well for everyone:
+                  Help ensure Linebreakers works well for everyone:
                 </p>
                 <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
                   <li className="text-muted-foreground">Test new features and report bugs</li>
@@ -157,9 +157,9 @@ export default function JoinTheTeamPage() {
                 </p>
                 <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
                   <li className="text-muted-foreground">Help other users in Discord</li>
-                  <li className="text-muted-foreground">Share Munda Manager with others</li>
+                  <li className="text-muted-foreground">Share Linebreakers with others</li>
                   <li className="text-muted-foreground">Organise community events or campaigns</li>
-                  <li className="text-muted-foreground">Create content showcasing Munda Manager</li>
+                  <li className="text-muted-foreground">Create content showcasing Linebreakers</li>
                 </ul>
               </section>
 
@@ -169,9 +169,9 @@ export default function JoinTheTeamPage() {
                   Ready to contribute? Here's how to get started:
                 </p>
                 <ol className="list-decimal pl-6 space-y-2 marker:text-red-800 mb-4">
-                  <li className="text-muted-foreground">Fill out our <a href="https://forms.gle/rkkqyqLEdfV6ZTSc7" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-800">application form</a> to tell us what you're interested in helping with</li>
-                  <li className="text-muted-foreground">Join our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-800">Discord server</a> and introduce yourself</li>
-                  <li className="text-muted-foreground">For developers, check out our <a href="https://github.com/joeseos/mundamanager" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-800">GitHub repository</a> and read the README</li>
+                  <li className="text-muted-foreground">Fill out our <a href="https://forms.gle/rkkqyqLEdfV6ZTSc7" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">application form</a> to tell us what you're interested in helping with</li>
+                  <li className="text-muted-foreground">Join our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Discord server</a> and introduce yourself</li>
+                  <li className="text-muted-foreground">For developers, check out our <a href="https://github.com/joeseos/mundamanager" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">GitHub repository</a> and read the README</li>
                 </ol>
               </section>
 
@@ -197,7 +197,7 @@ export default function JoinTheTeamPage() {
                 <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
                   <li className="text-muted-foreground">GitHub contributor list</li>
                   <li className="text-muted-foreground">Release notes for significant contributions</li>
-                  <li className="text-muted-foreground">Our <Link href="/contributors" className="underline hover:text-red-800">Contributors page</Link> for content creators</li>
+                  <li className="text-muted-foreground">Our <Link href="/contributors" className="underline hover:text-primary">Contributors page</Link> for content creators</li>
                   <li className="text-muted-foreground">Community acknowledgements in Discord</li>
                 </ul>
               </section>
@@ -208,8 +208,8 @@ export default function JoinTheTeamPage() {
                   If you have questions about contributing, feel free to:
                 </p>
                 <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
-                  <li className="text-muted-foreground">Ask in our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-800">Discord server</a></li>
-                  <li className="text-muted-foreground">Contact us through our <Link href="/contact" className="underline hover:text-red-800">Contact page</Link></li>
+                  <li className="text-muted-foreground">Ask in our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Discord server</a></li>
+                  <li className="text-muted-foreground">Contact us through our <Link href="/contact" className="underline hover:text-primary">Contact page</Link></li>
                 </ul>
               </section>
             </div>

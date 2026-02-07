@@ -57,7 +57,7 @@ export default async function AccountPage() {
                 <div className="relative group">
                   <ImInfo className="text-muted-foreground cursor-help" />
                   <div className="absolute bottom-full mb-2 hidden group-hover:block bg-black text-white text-xs p-2 rounded w-72 -left-36 z-50">
-                    Emails on Patreon and Munda Manager need to match for the membership to be displayed.
+                    Emails on Patreon and Linebreakers need to match for the membership to be displayed.
                     <br /><br />
                     Please raise a ticket on Discord if you think there is an error.
                   </div>

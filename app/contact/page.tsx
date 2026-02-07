@@ -7,10 +7,10 @@ const defaultUrl = process.env.NODE_ENV === 'development'
   ? "http://localhost:3000"
   : "https://www.mundamanager.com";
 
-const PAGE_TITLE = 'Contact Us - Munda Manager';
-const PAGE_DESCRIPTION = 'Get in touch with the Munda Manager team. Find our Discord, social media, and other ways to contact us for support, feedback, or questions.';
-const PAGE_DESCRIPTION_SHORT = 'Get in touch with the Munda Manager team. Find our Discord, social media, and contact information.';
-const PAGE_KEYWORDS = 'Munda Manager contact, support, feedback, Discord, help';
+const PAGE_TITLE = 'Contact Us - Linebreakers';
+const PAGE_DESCRIPTION = 'Get in touch with the Linebreakers team. Find our Discord, social media, and other ways to contact us for support, feedback, or questions.';
+const PAGE_DESCRIPTION_SHORT = 'Get in touch with the Linebreakers team. Find our Discord, social media, and contact information.';
+const PAGE_KEYWORDS = 'Linebreakers contact, support, feedback, Discord, help';
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION_SHORT,
     url: `${defaultUrl}/contact`,
     type: 'article',
-    siteName: 'Munda Manager',
+    siteName: 'Linebreakers',
   },
   twitter: {
     card: 'summary_large_image',
@@ -41,11 +41,11 @@ export default function ContactPage() {
     "description": PAGE_DESCRIPTION,
     "author": {
       "@type": "Organization",
-      "name": "Munda Manager Team"
+      "name": "Linebreakers Team"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Munda Manager",
+      "name": "Linebreakers",
       "logo": {
         "@type": "ImageObject",
         "url": `${defaultUrl}/images/favicon-192x192.png`
@@ -78,7 +78,7 @@ export default function ContactPage() {
             
             <div className="mb-8">
               <p className="text-muted-foreground mb-2">
-                We'd love to hear from you! Whether you have questions, feedback, bug reports, or just want to say hello, there are several ways to get in touch with the Munda Manager team.
+                We'd love to hear from you! Whether you have questions, feedback, bug reports, or just want to say hello, there are several ways to get in touch with the Linebreakers team.
               </p>
             </div>
 
@@ -99,7 +99,7 @@ export default function ContactPage() {
                   href="https://discord.gg/ZWXXqd5NUt"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:text-red-800 transition-colors font-medium"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary transition-colors font-medium"
                 >
                   <FaDiscord className="h-5 w-5" />
                   Join our Discord Server
@@ -116,7 +116,7 @@ export default function ContactPage() {
                     href="https://www.instagram.com/mundamanager"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-red-800 transition-colors"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary transition-colors"
                   >
                     <FaInstagram className="h-5 w-5" />
                     Instagram
@@ -125,7 +125,7 @@ export default function ContactPage() {
                     href="https://www.patreon.com/c/mundamanager"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-red-800 transition-colors"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary transition-colors"
                   >
                     <FaPatreon className="h-5 w-5" />
                     Patreon
@@ -134,7 +134,7 @@ export default function ContactPage() {
                     href="https://github.com/joeseos/mundamanager"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-red-800 transition-colors"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary transition-colors"
                   >
                     <FaGithub className="h-5 w-5" />
                     GitHub
@@ -148,18 +148,18 @@ export default function ContactPage() {
                   For technical support, bug reports, or feature requests:
                 </p>
                 <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
-                  <li className="text-muted-foreground">Join our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-800">Discord server</a> and post in the support channel</li>
-                  <li className="text-muted-foreground">Check out our <Link href="/user-guide" className="underline hover:text-red-800">User Guide</Link> for detailed instructions on using Munda Manager</li>
+                  <li className="text-muted-foreground">Join our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Discord server</a> and post in the support channel</li>
+                  <li className="text-muted-foreground">Check out our <Link href="/user-guide" className="underline hover:text-primary">User Guide</Link> for detailed instructions on using Linebreakers</li>
                 </ul>
               </section>
 
               <section id="feedback" className="scroll-mt-24">
                 <h2 className="text-xl font-semibold text-foreground mb-1">Feedback & Suggestions</h2>
                 <p className="text-muted-foreground mb-2">
-                  Your feedback is invaluable to us! We're always looking to improve Munda Manager based on community input. Share your ideas:
+                  Your feedback is invaluable to us! We're always looking to improve Linebreakers based on community input. Share your ideas:
                 </p>
                 <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
-                  <li className="text-muted-foreground">Post feature requests in our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-800">Discord server</a></li>
+                  <li className="text-muted-foreground">Post feature requests in our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Discord server</a></li>
                   <li className="text-muted-foreground">Share your thoughts on our social media channels</li>
                 </ul>
               </section>
@@ -167,12 +167,12 @@ export default function ContactPage() {
               <section id="contributing" className="scroll-mt-24">
                 <h2 className="text-xl font-semibold text-foreground mb-1">Contributing</h2>
                 <p className="text-muted-foreground mb-2">
-                  Munda Manager is a community-driven project! If you're interested in contributing:
+                  Linebreakers is a community-driven project! If you're interested in contributing:
                 </p>
                 <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
-                  <li className="text-muted-foreground">Check out our <Link href="/join-the-team" className="underline hover:text-red-800">Join the Team</Link> page for more information</li>
-                  <li className="text-muted-foreground">Visit our <a href="https://github.com/joeseos/mundamanager" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-800">GitHub repository</a> to get familiar with the codebase</li>
-                  <li className="text-muted-foreground">Join our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-800">Discord server</a> to discuss contribution opportunities</li>
+                  <li className="text-muted-foreground">Check out our <Link href="/join-the-team" className="underline hover:text-primary">Join the Team</Link> page for more information</li>
+                  <li className="text-muted-foreground">Visit our <a href="https://github.com/joeseos/mundamanager" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">GitHub repository</a> to get familiar with the codebase</li>
+                  <li className="text-muted-foreground">Join our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Discord server</a> to discuss contribution opportunities</li>
                 </ul>
               </section>
 

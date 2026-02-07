@@ -28,18 +28,18 @@ const inter = Inter({
 })
 
 // Metadata constants
-const SITE_TITLE = "Munda Manager";
-const SITE_DESCRIPTION = "Gang & Campaign management tool for Necromunda";
-const SITE_IMAGE = '/images/favicon-192x192.png';
+const SITE_TITLE = "Linebreakers";
+const SITE_DESCRIPTION = "Necromunda Campaign Manager with AI-powered narrative generation";
+const SITE_IMAGE = '/images/logo.png';
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
-  keywords: "Necromunda, gang management, campaign tool, list builder, gang list, gang builder, yaktribe replacement, Munda Manager",
-  authors: [{ name: "Munda Manager Team" }],
-  creator: "Munda Manager",
-  publisher: "Munda Manager",
+  keywords: "Necromunda, gang management, campaign tool, list builder, gang list, gang builder, AI narratives, Linebreakers",
+  authors: [{ name: "Linebreakers" }],
+  creator: "Linebreakers",
+  publisher: "Linebreakers",
   formatDetection: {
     email: false,
     address: false,
@@ -133,9 +133,12 @@ export default async function RootLayout({
               (function() {
                 try {
                   const theme = localStorage.getItem('mundamanager-theme');
-                  const isDark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
-                  const currentClass = document.documentElement.className;
-                  document.documentElement.className = currentClass + (isDark ? ' dark' : '');
+                  if (theme === 'hive') {
+                    document.documentElement.className += ' hive';
+                  } else {
+                    const isDark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                    if (isDark) document.documentElement.className += ' dark';
+                  }
                 } catch (_) {}
               })();
             `,
@@ -163,6 +166,7 @@ export default async function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
+          themes={['light', 'dark', 'hive', 'system']}
           disableTransitionOnChange
           storageKey="mundamanager-theme"
         >
@@ -172,14 +176,14 @@ export default async function RootLayout({
           <div className="flex justify-between items-center h-14 px-2">
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/favicon-36x36.png"
-                alt="App Icon"
+                src="/images/logo.png"
+                alt="Linebreakers"
                 width={36}
                 height={36}
-                className="ml-1 mr-2"
+                className="ml-1 mr-2 rounded"
               />
               <span className="text-lg font-bold hover:text-primary transition-colors">
-                Munda Manager
+                Linebreakers
               </span>
             </Link>
             {user ? (

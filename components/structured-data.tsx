@@ -28,14 +28,9 @@ export function WebsiteStructuredData() {
     <StructuredData
       type="website"
       data={{
-        name: "Munda Manager",
-        description: "Gang & Campaign management tool for Necromunda",
-        url: "https://www.mundamanager.com",
-        potentialAction: {
-          "@type": "SearchAction",
-          target: "https://www.mundamanager.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        name: "Linebreakers",
+        description: "Necromunda Campaign Manager with AI-powered narrative generation",
+        url: "https://github.com/maykaven/mundamanagerLB",
       }}
     />
   );
@@ -46,13 +41,12 @@ export function OrganizationStructuredData() {
     <StructuredData
       type="organization"
       data={{
-        name: "Munda Manager",
-        description: "Gang & Campaign management tool for Necromunda",
-        url: "https://www.mundamanager.com",
-        logo: "https://www.mundamanager.com/images/favicon-192x192.png",
+        name: "Linebreakers",
+        description: "Necromunda Campaign Manager with AI-powered narrative generation",
+        url: "https://github.com/maykaven/mundamanagerLB",
+        logo: "/images/logo.png",
         sameAs: [
-          "https://discord.gg/ZWXXqd5NUt",
-          "https://www.patreon.com/c/mundamanager"
+          "https://github.com/maykaven/mundamanagerLB"
         ]
       }}
     />

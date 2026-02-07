@@ -12,8 +12,10 @@ import { MdChair } from "react-icons/md";
 import { FaMedkit } from "react-icons/fa";
 import { WeaponProfile, Weapon } from '@/types/equipment';
 import { Badge } from '@/components/ui/badge';
+import { TraitBadgeList } from '@/components/ui/trait-badge';
 import { FighterCardActionMenu } from './fighter-card-action-menu';
 import { CgMoreVerticalO } from "react-icons/cg";
+import { calculateArmorSave } from '@/utils/calculate-armor-save';
 
 
 interface FighterCardProps extends Omit<FighterProps, 'fighter_name' | 'fighter_type' | 'vehicles' | 'skills' | 'effects'> {
@@ -310,6 +312,8 @@ const FighterCard = memo(function FighterCard({
   // Replace adjustedStats with modifiedStats
   const adjustedStats = useMemo(() => calculateAdjustedStats(fighterData), [fighterData]);
 
+  const armorSave = useMemo(() => calculateArmorSave(wargear || []), [wargear]);
+
   // Update stats calculation to use modifiedStats
   const stats = useMemo((): StatsType => {
     if (isCrew) {
@@ -339,13 +343,14 @@ const FighterCard = memo(function FighterCard({
       'W': adjustedStats.wounds,
       'I': `${adjustedStats.initiative}+`,
       'A': adjustedStats.attacks,
+      'Sv': armorSave.finalSave !== null ? `${armorSave.finalSave}+` : '-',
       'Ld': `${adjustedStats.leadership}+`,
       'Cl': `${adjustedStats.cool}+`,
       'Wil': `${adjustedStats.willpower}+`,
       'Int': `${adjustedStats.intelligence}+`,
       'XP': xp
     };
-  }, [isCrew, vehicleStats, adjustedStats, xp]);
+  }, [isCrew, vehicleStats, adjustedStats, xp, armorSave]);
 
   const isInactive = killed || retired || enslaved || recovery;
 
@@ -609,16 +614,18 @@ const FighterCard = memo(function FighterCard({
               <>
                 <div className="min-w-[0px] font-bold text-sm pr-4 whitespace-nowrap">Wargear</div>
                 <div className="min-w-[0px] text-sm break-words">
-                  {Object.entries(
-                    wargear
-                      .slice() // avoid mutating original array
-                      .sort((a, b) => a.wargear_name.localeCompare(b.wargear_name))
-                      .reduce<Record<string, number>>((acc, item) => {
-                        acc[item.wargear_name] = (acc[item.wargear_name] || 0) + 1;
-                        return acc;
-                      }, {}))
-                    .map(([name, count]) => (count > 1 ? `${name} (x${count})` : name))
-                    .join(', ')}
+                  <TraitBadgeList
+                    traits={Object.entries(
+                      wargear
+                        .slice()
+                        .sort((a, b) => a.wargear_name.localeCompare(b.wargear_name))
+                        .reduce<Record<string, number>>((acc, item) => {
+                          acc[item.wargear_name] = (acc[item.wargear_name] || 0) + 1;
+                          return acc;
+                        }, {}))
+                      .map(([name, count]) => (count > 1 ? `${name} (x${count})` : name))}
+                    type="equipment"
+                  />
                 </div>
               </>
             )}
@@ -634,11 +641,10 @@ const FighterCard = memo(function FighterCard({
                     const skillNames = [
                       ...(advancements?.skills ? Object.keys(advancements.skills) : []),
                       ...(skills ? Object.keys(skills) : [])
-                    ].filter(Boolean);
-                    const skillsText = skillNames.sort((a, b) => a.localeCompare(b)).join(', ');
+                    ].filter(Boolean).sort((a, b) => a.localeCompare(b));
                     return (
                       <>
-                        {skillsText}
+                        <TraitBadgeList traits={skillNames} type="skill" />
                         {free_skill && (
                           <div className="flex items-center gap-2 text-amber-700 mt-1">
                             <svg

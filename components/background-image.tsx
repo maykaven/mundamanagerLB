@@ -17,7 +17,7 @@ export default function BackgroundImage() {
   return (
     <div className="fixed inset-0 z-[-1] print:hidden">
       <Image
-        src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/background_numv5r.avif"
+        src="/images/hero-bg-2.png"
         alt="Background"
         fill
         priority

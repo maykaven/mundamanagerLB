@@ -164,7 +164,7 @@ export default function HomeTabs({
                           );
                         })()}
                         <Image
-                          src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/cogwheel-gang-portrait_vbu4c5.webp"
+                          src="/images/portriat_ring.png"
                           alt=""
                           width={80}
                           height={80}
@@ -230,7 +230,7 @@ export default function HomeTabs({
                           </div>
                         )}
                         <Image
-                          src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/cogwheel-gang-portrait_vbu4c5.webp"
+                          src="/images/portriat_ring.png"
                           alt=""
                           width={80}
                           height={80}

@@ -206,7 +206,7 @@ export default function SignIn() {
             } flex items-center justify-center`}
           >
             <MdAppShortcut className="h-5 w-5" />
-            <span className="ml-2 hidden sm:inline">What is Munda Manager?</span>
+            <span className="ml-2 hidden sm:inline">What is Linebreakers?</span>
           </button>
 
           <button
@@ -226,18 +226,18 @@ export default function SignIn() {
         <div className="bg-card shadow-md rounded-lg p-4">
           {/* Tab-specific content */}
           
-          {/* What is Munda Manager tab content */}
+          {/* What is Linebreakers tab content */}
           {activeTab === 0 && (
             <div>
-              <h1 className="text-xl font-semibold mb-4">What is Munda Manager? And what can you do with it?</h1>
+              <h1 className="text-xl font-semibold mb-4">What is Linebreakers? And what can you do with it?</h1>
               <WhatIsMundaManager userCount={userCount} gangCount={gangCount} campaignCount={campaignCount} />
             </div>
           )}
           
-          {/* About Munda Manager tab content */}
+          {/* About Linebreakers tab content */}
           {activeTab === 1 && (
             <div>
-              <h1 className="text-xl font-semibold mb-4">About Munda Manager</h1>
+              <h1 className="text-xl font-semibold mb-4">About Linebreakers</h1>
               <AboutMundaManager />
             </div>
           )}

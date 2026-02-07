@@ -6,10 +6,10 @@ const defaultUrl = process.env.NODE_ENV === 'development'
   ? "http://localhost:3000"
   : "https://www.mundamanager.com";
 
-const PAGE_TITLE = 'Terms of Service - Munda Manager';
-const PAGE_DESCRIPTION = 'Terms of Service for Munda Manager. Read our terms and conditions for using the gang and campaign management tool for Necromunda.';
-const PAGE_DESCRIPTION_SHORT = 'Terms of Service for Munda Manager. Read our terms and conditions for using the platform.';
-const PAGE_KEYWORDS = 'Munda Manager terms, terms of service, terms and conditions, Necromunda tool terms';
+const PAGE_TITLE = 'Terms of Service - Linebreakers';
+const PAGE_DESCRIPTION = 'Terms of Service for Linebreakers. Read our terms and conditions for using the gang and campaign management tool for Necromunda.';
+const PAGE_DESCRIPTION_SHORT = 'Terms of Service for Linebreakers. Read our terms and conditions for using the platform.';
+const PAGE_KEYWORDS = 'Linebreakers terms, terms of service, terms and conditions, Necromunda tool terms';
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION_SHORT,
     url: `${defaultUrl}/terms`,
     type: 'article',
-    siteName: 'Munda Manager',
+    siteName: 'Linebreakers',
   },
   twitter: {
     card: 'summary_large_image',
@@ -40,11 +40,11 @@ export default function TermsPage() {
     "description": PAGE_DESCRIPTION,
     "author": {
       "@type": "Organization",
-      "name": "Munda Manager Team"
+      "name": "Linebreakers Team"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Munda Manager",
+      "name": "Linebreakers",
       "logo": {
         "@type": "ImageObject",
         "url": `${defaultUrl}/images/favicon-192x192.png`
@@ -81,7 +81,7 @@ export default function TermsPage() {
                 Last updated: {new Date().toISOString().split('T')[0]}
               </p>
               <p className="text-muted-foreground mb-2">
-                Please read these Terms of Service ("Terms") carefully before using Munda Manager ("the Service") operated by the Munda Manager Team ("us", "we", or "our").
+                Please read these Terms of Service ("Terms") carefully before using Linebreakers ("the Service") operated by the Linebreakers Team ("us", "we", or "our").
               </p>
             </div>
 
@@ -89,14 +89,14 @@ export default function TermsPage() {
               <section id="acceptance" className="scroll-mt-24">
                 <h2 className="text-xl font-semibold text-foreground mb-1">1. Acceptance of Terms</h2>
                 <p className="text-muted-foreground mb-2">
-                  By accessing or using Munda Manager, you agree to be bound by these Terms. If you disagree with any part of these terms, then you may not access the Service.
+                  By accessing or using Linebreakers, you agree to be bound by these Terms. If you disagree with any part of these terms, then you may not access the Service.
                 </p>
               </section>
 
               <section id="use-of-service" className="scroll-mt-24">
                 <h2 className="text-xl font-semibold text-foreground mb-1">2. Use of Service</h2>
                 <p className="text-muted-foreground mb-2">
-                  Munda Manager is a community-driven tool for managing Necromunda gangs and campaigns. You agree to use the Service only for lawful purposes and in accordance with these Terms.
+                  Linebreakers is a community-driven tool for managing Necromunda gangs and campaigns. You agree to use the Service only for lawful purposes and in accordance with these Terms.
                 </p>
                 <p className="text-muted-foreground mb-2">
                   You agree not to:
@@ -138,10 +138,10 @@ export default function TermsPage() {
               <section id="intellectual-property" className="scroll-mt-24">
                 <h2 className="text-xl font-semibold text-foreground mb-1">5. Intellectual Property</h2>
                 <p className="text-muted-foreground mb-2">
-                  The Service and its original content, features, and functionality are owned by the Munda Manager Team and are protected by international copyright, trade mark, patent, trade secret, and other intellectual property laws.
+                  The Service and its original content, features, and functionality are owned by the Linebreakers Team and are protected by international copyright, trade mark, patent, trade secret, and other intellectual property laws.
                 </p>
                 <p className="text-muted-foreground mb-2">
-                  Necromunda is a trade mark of Games Workshop Limited. Munda Manager is not affiliated with, endorsed by, or sponsored by Games Workshop Limited. This Service is provided for the community's use in managing their Necromunda games and campaigns.
+                  Necromunda is a trade mark of Games Workshop Limited. Linebreakers is not affiliated with, endorsed by, or sponsored by Games Workshop Limited. This Service is provided for the community's use in managing their Necromunda games and campaigns.
                 </p>
               </section>
 
@@ -158,7 +158,7 @@ export default function TermsPage() {
               <section id="limitation-of-liability" className="scroll-mt-24">
                 <h2 className="text-xl font-semibold text-foreground mb-1">7. Limitation of Liability</h2>
                 <p className="text-muted-foreground mb-2">
-                  In no event shall the Munda Manager Team, its contributors, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.
+                  In no event shall the Linebreakers Team, its contributors, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.
                 </p>
               </section>
 
@@ -185,7 +185,7 @@ export default function TermsPage() {
               <section id="contact" className="scroll-mt-24">
                 <h2 className="text-xl font-semibold text-foreground mb-1">10. Contact Information</h2>
                 <p className="text-muted-foreground mb-2">
-                  If you have any questions about these Terms, please contact us through our <Link href="/contact" className="underline hover:text-red-800">Contact page</Link> or join our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-800">Discord server</a>.
+                  If you have any questions about these Terms, please contact us through our <Link href="/contact" className="underline hover:text-primary">Contact page</Link> or join our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Discord server</a>.
                 </p>
               </section>
             </div>

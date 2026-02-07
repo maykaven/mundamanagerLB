@@ -604,8 +604,8 @@ export function CreateGangModal({ onClose }: CreateGangModalProps) {
                   )}
                   <div className="absolute z-20 size-[200px] md:size-[250px]">
                     <Image
-                      src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/cogwheel-gang-portrait_vbu4c5.webp"
-                      alt="Cogwheel"
+                      src="/images/portriat_ring.png"
+                      alt="Portrait Ring"
                       width={250}
                       height={250}
                       className="absolute z-20"

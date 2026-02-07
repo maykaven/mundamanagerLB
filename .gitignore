@@ -45,6 +45,15 @@ next-env.d.ts
 claude.md
 tasks/
 
+# claude code
+.claude/
+
+# old reference project
+LBcampaignBot/
+
+# windows artifacts
+nul
+
 # supabase
 supabase/policies/
 supabase/seed/

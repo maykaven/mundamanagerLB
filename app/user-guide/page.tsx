@@ -10,10 +10,10 @@ const defaultUrl = process.env.NODE_ENV === 'development'
   : "https://www.mundamanager.com";
 
 // SEO constants - edit these to update all metadata
-const PAGE_TITLE = 'User Guide - How to Use Munda Manager';
-const PAGE_DESCRIPTION = 'Complete user guide for Munda Manager. Learn how to create gangs, manage fighters, run campaigns, use custom assets, and explore advanced features like Chem-Alchemy and Gene-Smithing for Necromunda.';
-const PAGE_DESCRIPTION_SHORT = 'Complete user guide for Munda Manager. Learn how to create gangs, manage fighters, run campaigns, and explore advanced features.';
-const PAGE_KEYWORDS = 'Munda Manager user guide, Necromunda guide, gang management tutorial, campaign management guide, how to use Munda Manager, Necromunda gang builder guide';
+const PAGE_TITLE = 'User Guide - How to Use Linebreakers';
+const PAGE_DESCRIPTION = 'Complete user guide for Linebreakers. Learn how to create gangs, manage fighters, run campaigns, use custom assets, and explore advanced features like Chem-Alchemy and Gene-Smithing for Necromunda.';
+const PAGE_DESCRIPTION_SHORT = 'Complete user guide for Linebreakers. Learn how to create gangs, manage fighters, run campaigns, and explore advanced features.';
+const PAGE_KEYWORDS = 'Linebreakers user guide, Necromunda guide, gang management tutorial, campaign management guide, how to use Linebreakers, Necromunda gang builder guide';
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION_SHORT,
     url: `${defaultUrl}/user-guide`,
     type: 'article',
-    siteName: 'Munda Manager',
+    siteName: 'Linebreakers',
   },
   twitter: {
     card: 'summary_large_image',
@@ -44,11 +44,11 @@ export default function UserGuidePage() {
     "description": PAGE_DESCRIPTION,
     "author": {
       "@type": "Organization",
-      "name": "Munda Manager Team"
+      "name": "Linebreakers Team"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Munda Manager",
+      "name": "Linebreakers",
       "logo": {
         "@type": "ImageObject",
         "url": `${defaultUrl}/images/favicon-192x192.png`
@@ -77,12 +77,12 @@ export default function UserGuidePage() {
       <div className="container ml-[10px] mr-[10px] max-w-4xl w-full space-y-4">
         <div className="bg-card shadow-md rounded-lg p-4">
           <h1 className="text-2xl md:text-2xl font-bold mb-4">
-            User Guide: How to Use Munda Manager
+            User Guide: How to Use Linebreakers
           </h1>
           
           <div className="mb-8">
             <p className="text-muted-foreground mb-2">
-              Welcome to the Munda Manager user guide! This comprehensive guide will help you make the most of all the features available in Munda Manager. Whether you're creating your first gang, managing a campaign, or exploring advanced mechanics, you'll find detailed instructions and helpful tips below.
+              Welcome to the Linebreakers user guide! This comprehensive guide will help you make the most of all the features available in Linebreakers. Whether you're creating your first gang, managing a campaign, or exploring advanced mechanics, you'll find detailed instructions and helpful tips below.
             </p>
           </div>
 
@@ -90,40 +90,40 @@ export default function UserGuidePage() {
           <div className="mb-12">
             <h2 className="text-xl font-semibold text-foreground mb-2">Contents</h2>
             <ul className="list-disc marker:text-red-800 pl-6 space-y-2">
-              <li><a href="#installing-as-an-app" className="underline hover:text-red-800">Installing the Mobile App</a></li>
+              <li><a href="#installing-as-an-app" className="underline hover:text-primary">Installing the Mobile App</a></li>
               <li>
-                <a href="#gangs" className="underline hover:text-red-800">Gangs</a>
+                <a href="#gangs" className="underline hover:text-primary">Gangs</a>
                 <ul className="list-disc marker:text-red-800 pl-6 mt-2 space-y-1">
-                  <li><a href="#gang-card-presentation" className="underline hover:text-red-800">Gang Card Presentation</a></li>
-                  <li><a href="#reorder-fighter-cards" className="underline hover:text-red-800">Reorder Fighter Cards</a></li>
-                  <li><a href="#gang-notes" className="underline hover:text-red-800">Gang Notes</a></li>
-                  <li><a href="#house-escher-chem-alchemy" className="underline hover:text-red-800">House Escher: Chem-Alchemy</a></li>
-                  <li><a href="#house-goliath-gene-smithing" className="underline hover:text-red-800">House Goliath: Gene-Smithing</a></li>
-                  <li><a href="#spyre-hunting-party-spyres-rig-upgrades" className="underline hover:text-red-800">Spyre Hunting Party: Spyres Rig Upgrades</a></li>
-                  <li><a href="#venator-gang-legacy-outcast-gang-affiliation" className="underline hover:text-red-800">Venator: Gang Legacy & Outcast Gang Affiliation</a></li>
-                  <li><a href="#outcast-elevating-a-fighter-to-leader" className="underline hover:text-red-800">Outcast: Elevating a fighter to Leader</a></li>
-                  <li><a href="#palanite-enforcers-selecting-a-prefecture" className="underline hover:text-red-800">Palanite Enforcers: Selecting a Prefecture</a></li>
-                  <li><a href="#wasteland-crusading-corrupted-or-infested-gangs" className="underline hover:text-red-800">Wasteland, Crusading, Corrupted or Infested gangs</a></li>
+                  <li><a href="#gang-card-presentation" className="underline hover:text-primary">Gang Card Presentation</a></li>
+                  <li><a href="#reorder-fighter-cards" className="underline hover:text-primary">Reorder Fighter Cards</a></li>
+                  <li><a href="#gang-notes" className="underline hover:text-primary">Gang Notes</a></li>
+                  <li><a href="#house-escher-chem-alchemy" className="underline hover:text-primary">House Escher: Chem-Alchemy</a></li>
+                  <li><a href="#house-goliath-gene-smithing" className="underline hover:text-primary">House Goliath: Gene-Smithing</a></li>
+                  <li><a href="#spyre-hunting-party-spyres-rig-upgrades" className="underline hover:text-primary">Spyre Hunting Party: Spyres Rig Upgrades</a></li>
+                  <li><a href="#venator-gang-legacy-outcast-gang-affiliation" className="underline hover:text-primary">Venator: Gang Legacy & Outcast Gang Affiliation</a></li>
+                  <li><a href="#outcast-elevating-a-fighter-to-leader" className="underline hover:text-primary">Outcast: Elevating a fighter to Leader</a></li>
+                  <li><a href="#palanite-enforcers-selecting-a-prefecture" className="underline hover:text-primary">Palanite Enforcers: Selecting a Prefecture</a></li>
+                  <li><a href="#wasteland-crusading-corrupted-or-infested-gangs" className="underline hover:text-primary">Wasteland, Crusading, Corrupted or Infested gangs</a></li>
                 </ul>
               </li>
               <li>
-                <a href="#fighters" className="underline hover:text-red-800">Fighters</a>
+                <a href="#fighters" className="underline hover:text-primary">Fighters</a>
                 <ul className="list-disc marker:text-red-800 pl-6 mt-2 space-y-1">
-                  <li><a href="#promotion-to-specialist" className="underline hover:text-red-800">Promotion to Specialist</a></li>
+                  <li><a href="#promotion-to-specialist" className="underline hover:text-primary">Promotion to Specialist</a></li>
                 </ul>
               </li>
               <li>
-                <a href="#campaigns" className="underline hover:text-red-800">Campaigns</a>
+                <a href="#campaigns" className="underline hover:text-primary">Campaigns</a>
                 <ul className="list-disc marker:text-red-800 pl-6 mt-2 space-y-1">
-                  <li><a href="#add-a-new-gang-player-to-a-campaign" className="underline hover:text-red-800">Add a new Gang/Player to a campaign</a></li>
+                  <li><a href="#add-a-new-gang-player-to-a-campaign" className="underline hover:text-primary">Add a new Gang/Player to a campaign</a></li>
                 </ul>
               </li>
               <li>
-                <a href="#custom-assets" className="underline hover:text-red-800">Custom Assets</a>
+                <a href="#custom-assets" className="underline hover:text-primary">Custom Assets</a>
                 <ul className="list-disc marker:text-red-800 pl-6 mt-2 space-y-1">
-                  <li><a href="#custom-equipment" className="underline hover:text-red-800">Custom Equipment</a></li>
-                  <li><a href="#custom-fighters" className="underline hover:text-red-800">Custom Fighters</a></li>
-                  <li><a href="#sharing-custom-assets" className="underline hover:text-red-800">Sharing Custom Assets</a></li>
+                  <li><a href="#custom-equipment" className="underline hover:text-primary">Custom Equipment</a></li>
+                  <li><a href="#custom-fighters" className="underline hover:text-primary">Custom Fighters</a></li>
+                  <li><a href="#sharing-custom-assets" className="underline hover:text-primary">Sharing Custom Assets</a></li>
                 </ul>
               </li>
             </ul>
@@ -139,7 +139,7 @@ export default function UserGuidePage() {
               <div className="my-4 flex justify-center">
                 <img
                   src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/user-guide/add-app-to-home-screen.webp"
-                  alt="Screenshot showing how to add Munda Manager to home screen on mobile device using the browser hamburger menu"
+                  alt="Screenshot showing how to add Linebreakers to home screen on mobile device using the browser hamburger menu"
                   className="rounded-lg"
                   style={{ maxWidth: '100%', height: 'auto' }}
                 />
@@ -153,7 +153,7 @@ export default function UserGuidePage() {
                 <div className="my-4 flex justify-center">
                   <img
                     src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/user-guide/gang-card-presentation.webp"
-                    alt="Munda Manager gang card interface showing view options, edit button, feature icons (clone, logs, capture, share, print), gang image, and gang addition options"
+                    alt="Linebreakers gang card interface showing view options, edit button, feature icons (clone, logs, capture, share, print), gang image, and gang addition options"
                     className="rounded-lg"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
@@ -170,7 +170,7 @@ export default function UserGuidePage() {
                 <div className="my-4 flex justify-center">
                   <img
                     src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/user-guide/reorder-fighter-cards.webp"
-                    alt="Demonstration of drag and drop functionality to reorder fighter cards in Munda Manager gang view"
+                    alt="Demonstration of drag and drop functionality to reorder fighter cards in Linebreakers gang view"
                     className="rounded-lg"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
@@ -186,7 +186,7 @@ export default function UserGuidePage() {
                 <div className="my-4 flex justify-center">
                   <img
                     src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/user-guide/gang-notes.webp"
-                    alt="Rich text editor interface for managing gang notes and background stories in Munda Manager"
+                    alt="Rich text editor interface for managing gang notes and background stories in Linebreakers"
                     className="rounded-lg"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
@@ -197,12 +197,12 @@ export default function UserGuidePage() {
 
               <h3 id="house-escher-chem-alchemy" className="text-lg font-semibold text-foreground mt-6 mb-1 scroll-mt-24">House Escher: Chem-Alchemy</h3>
                 <p className="text-muted-foreground mb-2">
-                  For Escher gangs, Munda Manager supports Chem-Alchemy. You can create custom chems in the Stash and click on the Chem-Alchemy button.
+                  For Escher gangs, Linebreakers supports Chem-Alchemy. You can create custom chems in the Stash and click on the Chem-Alchemy button.
                 </p>
                 <div className="my-4 flex justify-center">
                   <img
                     src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/user-guide/chem-alchemy.webp"
-                    alt="House Escher Chem-Alchemy feature in Munda Manager showing custom chem creation and management interface"
+                    alt="House Escher Chem-Alchemy feature in Linebreakers showing custom chem creation and management interface"
                     className="rounded-lg"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
@@ -210,7 +210,7 @@ export default function UserGuidePage() {
 
               <h3 id="house-goliath-gene-smithing" className="text-lg font-semibold text-foreground mt-6 mb-1 scroll-mt-24">House Goliath: Gene-Smithing</h3>
                 <p className="text-muted-foreground mb-2">
-                  For Goliath gangs, Gene-Smithing is available as Equipment in the Fighter's equipment list. Beware that Munda Manager does not limit your selections and you are expected to familiarize yourself with their selection rules.
+                  For Goliath gangs, Gene-Smithing is available as Equipment in the Fighter's equipment list. Beware that Linebreakers does not limit your selections and you are expected to familiarize yourself with their selection rules.
                 </p>
 
               <h3 id="spyre-hunting-party-spyres-rig-upgrades" className="text-lg font-semibold text-foreground mt-6 mb-1 scroll-mt-24">Spyre Hunting Party: Spyres Rig Upgrades</h3>
@@ -251,7 +251,7 @@ export default function UserGuidePage() {
                 <div className="my-4 flex justify-center">
                   <img
                     src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/user-guide/gang-variants.webp"
-                    alt="Gang variants selection interface in Munda Manager showing options for Wasteland, Crusading, Corrupted, and Infested gang types"
+                    alt="Gang variants selection interface in Linebreakers showing options for Wasteland, Crusading, Corrupted, and Infested gang types"
                     className="rounded-lg"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
@@ -271,7 +271,7 @@ export default function UserGuidePage() {
                 <div className="my-4 flex justify-center">
                   <img
                     src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/user-guide/promotion-to-specialist.webp"
-                    alt="Fighter edit interface in Munda Manager showing how to change fighter class to Specialist"
+                    alt="Fighter edit interface in Linebreakers showing how to change fighter class to Specialist"
                     className="rounded-lg"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
@@ -288,7 +288,7 @@ export default function UserGuidePage() {
                 <div className="my-4 flex justify-center">
                   <img
                     src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/user-guide/add-new-gang-player-to-a-campaign.webp"
-                    alt="Campaign management interface showing how to add players and their gangs to a Necromunda campaign in Munda Manager"
+                    alt="Campaign management interface showing how to add players and their gangs to a Necromunda campaign in Linebreakers"
                     className="rounded-lg"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
@@ -306,7 +306,7 @@ export default function UserGuidePage() {
               <div className="my-4 flex justify-center">
                 <img
                   src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/user-guide/custom-assets.webp"
-                  alt="Custom Assets tab interface in Munda Manager showing options to create custom equipment, fighters, and territories"
+                  alt="Custom Assets tab interface in Linebreakers showing options to create custom equipment, fighters, and territories"
                   className="rounded-lg"
                   style={{ maxWidth: '100%', height: 'auto' }}
                 />
@@ -320,7 +320,7 @@ export default function UserGuidePage() {
                 <div className="my-4 flex justify-center">
                   <img
                     src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/user-guide/custom-equipment.webp"
-                    alt="Custom equipment creation form in Munda Manager showing how to set up weapon profiles with multiple stat profiles"
+                    alt="Custom equipment creation form in Linebreakers showing how to set up weapon profiles with multiple stat profiles"
                     className="rounded-lg"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />
@@ -329,7 +329,7 @@ export default function UserGuidePage() {
                 <div className="my-4 flex justify-center">
                   <img
                     src="https://iojoritxhpijprgkjfre.supabase.co/storage/v1/object/public/site-images/user-guide/custom-equipment-weapon-table.webp"
-                    alt="Resulting weapon table display showing custom equipment with multiple profiles in Munda Manager"
+                    alt="Resulting weapon table display showing custom equipment with multiple profiles in Linebreakers"
                     className="rounded-lg"
                     style={{ maxWidth: '100%', height: 'auto' }}
                   />

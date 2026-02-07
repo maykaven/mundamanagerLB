@@ -59,6 +59,7 @@ export interface WargearItem {
   wargear_name: string;
   cost: number;
   is_master_crafted?: boolean;
+  equipment_category?: string;
 }
 
 export interface WeaponProps {

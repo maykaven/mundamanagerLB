@@ -10,10 +10,10 @@ const defaultUrl = process.env.NODE_ENV === 'development'
   : "https://www.mundamanager.com";
 
 // SEO constants - edit these to update all metadata
-const PAGE_TITLE = 'Merch Store - Munda Manager Merchandise';
-const PAGE_DESCRIPTION = 'Show your support for Munda Manager with official merchandise! Browse our Redbubble store for t-shirts, stickers, mugs, and more featuring unique Necromunda-inspired designs.';
-const PAGE_DESCRIPTION_SHORT = 'Munda Manager merchandise on Redbubble. T-shirts, stickers, mugs, and more for Necromunda fans.';
-const PAGE_KEYWORDS = 'Munda Manager merch, Necromunda merchandise, wargaming t-shirts, tabletop gaming stickers, Munda Manager shop, underhive merchandise';
+const PAGE_TITLE = 'Merch Store - Linebreakers Merchandise';
+const PAGE_DESCRIPTION = 'Show your support for Linebreakers with official merchandise! Browse our Redbubble store for t-shirts, stickers, mugs, and more featuring unique Necromunda-inspired designs.';
+const PAGE_DESCRIPTION_SHORT = 'Linebreakers merchandise on Redbubble. T-shirts, stickers, mugs, and more for Necromunda fans.';
+const PAGE_KEYWORDS = 'Linebreakers merch, Necromunda merchandise, wargaming t-shirts, tabletop gaming stickers, Linebreakers shop, underhive merchandise';
 
 const REDBUBBLE_STORE_URL = 'https://www.redbubble.com/people/MundaManager';
 
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION_SHORT,
     url: `${defaultUrl}/merch`,
     type: 'website',
-    siteName: 'Munda Manager',
+    siteName: 'Linebreakers',
   },
   twitter: {
     card: 'summary_large_image',
@@ -46,7 +46,7 @@ export default function MerchPage() {
     "description": PAGE_DESCRIPTION,
     "publisher": {
       "@type": "Organization",
-      "name": "Munda Manager",
+      "name": "Linebreakers",
       "logo": {
         "@type": "ImageObject",
         "url": `${defaultUrl}/images/favicon-192x192.png`
@@ -138,16 +138,16 @@ export default function MerchPage() {
         <div className="container ml-[10px] mr-[10px] max-w-4xl w-full space-y-4">
           <div className="bg-card shadow-md rounded-lg p-4">
             <h1 className="text-2xl md:text-2xl font-bold mb-4">
-              Munda Manager Merchandise
+              Linebreakers Merchandise
             </h1>
             
             <div className="mb-8">
               <p className="text-muted-foreground mb-4">
-                You enjoy using Munda Manager? Now you can show your support with our <strong className="text-foreground">Munda Manager merchandise</strong>!
+                You enjoy using Linebreakers? Now you can show your support with our <strong className="text-foreground">Linebreakers merchandise</strong>!
                 We've set up a shop on Redbubble featuring a range of products with our distinct logo and text inspired by the grim darkness of the Underhive.
               </p>
               <p className="text-muted-foreground mb-6">
-                Every purchase helps support the continued development of Munda Manager and keeps the servers running. Plus, you'll look great at your next gaming session!
+                Every purchase helps support the continued development of Linebreakers and keeps the servers running. Plus, you'll look great at your next gaming session!
               </p>
               
               <div className="flex justify-center">
@@ -188,7 +188,7 @@ export default function MerchPage() {
                         />
                       </div>
                       <div className="p-3">
-                        <h3 className="text-sm font-semibold text-foreground line-clamp-2 group-hover:text-red-800 transition-colors">
+                        <h3 className="text-sm font-semibold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
                           {product.name}
                         </h3>
                       </div>
@@ -265,7 +265,7 @@ export default function MerchPage() {
             </div>
 
             <div className="mb-8">
-              <h2 className="text-2xl font-semibold text-foreground mb-2">Support Munda Manager</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-2">Support Linebreakers</h2>
               <p className="text-muted-foreground mb-4">
                 Purchasing merchandise is a great way to support the project while getting something cool in return. If you'd like to support us in other ways, consider:
               </p>
@@ -276,18 +276,18 @@ export default function MerchPage() {
                     href="https://www.patreon.com/c/mundamanager" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="underline hover:text-red-800"
+                    className="underline hover:text-primary"
                   >
                     Patreon
                   </a>{' '}
                   for exclusive benefits and early access to new features.
                 </li>
                 <li className="text-muted-foreground">
-                  <strong className="text-foreground">Spreading the word:</strong> Tell your gaming group about Munda Manager!
+                  <strong className="text-foreground">Spreading the word:</strong> Tell your gaming group about Linebreakers!
                 </li>
                 <li className="text-muted-foreground">
                   <strong className="text-foreground">Contributing:</strong> Check out our{' '}
-                  <Link href="/contributors" className="underline hover:text-red-800">
+                  <Link href="/contributors" className="underline hover:text-primary">
                     contributors page
                   </Link>{' '}
                   to see how you can help improve the app.
@@ -299,7 +299,7 @@ export default function MerchPage() {
               <h2 className="text-2xl font-semibold text-foreground mb-1">Questions?</h2>
               <p className="text-muted-foreground mb-2">
                 If you have questions about merchandise, want to suggest new designs, or have any issues with your order, please reach out through our{' '}
-                <Link href="/contact" className="underline hover:text-red-800">
+                <Link href="/contact" className="underline hover:text-primary">
                   contact page
                 </Link>{' '}
                 or join our{' '}
@@ -307,7 +307,7 @@ export default function MerchPage() {
                   href="https://discord.gg/ZWXXqd5NUt" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="underline hover:text-red-800"
+                  className="underline hover:text-primary"
                 >
                   Discord server
                 </a>

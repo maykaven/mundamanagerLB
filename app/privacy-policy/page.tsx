@@ -6,10 +6,10 @@ const defaultUrl = process.env.NODE_ENV === 'development'
   ? "http://localhost:3000"
   : "https://www.mundamanager.com";
 
-const PAGE_TITLE = 'Privacy Policy - Munda Manager';
-const PAGE_DESCRIPTION = 'Privacy Policy for Munda Manager. Learn how we collect, use, and protect your personal information when using our gang and campaign management tool.';
-const PAGE_DESCRIPTION_SHORT = 'Privacy Policy for Munda Manager. Learn how we collect, use, and protect your personal information.';
-const PAGE_KEYWORDS = 'Munda Manager privacy policy, data protection, privacy, user data, GDPR';
+const PAGE_TITLE = 'Privacy Policy - Linebreakers';
+const PAGE_DESCRIPTION = 'Privacy Policy for Linebreakers. Learn how we collect, use, and protect your personal information when using our gang and campaign management tool.';
+const PAGE_DESCRIPTION_SHORT = 'Privacy Policy for Linebreakers. Learn how we collect, use, and protect your personal information.';
+const PAGE_KEYWORDS = 'Linebreakers privacy policy, data protection, privacy, user data, GDPR';
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION_SHORT,
     url: `${defaultUrl}/privacy-policy`,
     type: 'article',
-    siteName: 'Munda Manager',
+    siteName: 'Linebreakers',
   },
   twitter: {
     card: 'summary_large_image',
@@ -40,11 +40,11 @@ export default function PrivacyPolicyPage() {
     "description": PAGE_DESCRIPTION,
     "author": {
       "@type": "Organization",
-      "name": "Munda Manager Team"
+      "name": "Linebreakers Team"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Munda Manager",
+      "name": "Linebreakers",
       "logo": {
         "@type": "ImageObject",
         "url": `${defaultUrl}/images/favicon-192x192.png`
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
                 Last updated: {new Date().toISOString().split('T')[0]}
               </p>
               <p className="text-muted-foreground mb-2">
-                At Munda Manager, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Service.
+                At Linebreakers, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Service.
               </p>
             </div>
 
@@ -174,7 +174,7 @@ export default function PrivacyPolicyPage() {
                   <li className="text-muted-foreground"><strong className="text-foreground">Objection:</strong> Object to certain processing of your information</li>
                 </ul>
                 <p className="text-muted-foreground mb-2 mt-4">
-                  To exercise these rights, please contact us through our <Link href="/contact" className="underline hover:text-red-800">Contact page</Link>.
+                  To exercise these rights, please contact us through our <Link href="/contact" className="underline hover:text-primary">Contact page</Link>.
                 </p>
               </section>
 
@@ -216,7 +216,7 @@ export default function PrivacyPolicyPage() {
               <section id="contact" className="scroll-mt-24">
                 <h2 className="text-xl font-semibold text-foreground mb-1">11. Contact Us</h2>
                 <p className="text-muted-foreground mb-2">
-                  If you have any questions about this Privacy Policy, please contact us through our <Link href="/contact" className="underline hover:text-red-800">Contact page</Link> or join our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-800">Discord server</a>.
+                  If you have any questions about this Privacy Policy, please contact us through our <Link href="/contact" className="underline hover:text-primary">Contact page</Link> or join our <a href="https://discord.gg/ZWXXqd5NUt" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Discord server</a>.
                 </p>
               </section>
             </div>

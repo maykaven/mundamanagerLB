@@ -1,6 +1,6 @@
 'use client';
 
-import { LuMoon, LuSun, LuMonitor } from "react-icons/lu";
+import { LuMoon, LuSun, LuMonitor, LuFlame } from "react-icons/lu";
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { Switch } from '@/components/ui/switch';
@@ -81,8 +81,9 @@ export function ThemeToggleDropdown() {
           className="hover:bg-neutral-800 hover:text-white data-[state=open]:bg-neutral-800 data-[state=open]:text-white rounded-full focus:outline-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 focus:ring-offset-0"
           aria-label="Toggle theme"
         >
-          <LuSun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+          <LuSun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 hive:-rotate-90 hive:scale-0" />
           <LuMoon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <LuFlame className="absolute h-5 w-5 rotate-90 scale-0 transition-all" style={theme === 'hive' ? { rotate: '0deg', scale: '1' } : {}} />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
@@ -97,6 +98,10 @@ export function ThemeToggleDropdown() {
         <DropdownMenuItem onClick={() => setTheme('dark')}>
           <LuMoon className="mr-2 h-4 w-4" />
           <span>Dark</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme('hive')}>
+          <LuFlame className="mr-2 h-4 w-4" />
+          <span>Hive</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('system')}>
           <LuMonitor className="mr-2 h-4 w-4" />
