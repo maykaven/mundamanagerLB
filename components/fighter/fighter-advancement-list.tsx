@@ -12,11 +12,12 @@ import { characteristicRank } from "@/utils/characteristicRank";
 import { List } from "@/components/ui/list";
 import { UserPermissions } from '@/types/user-permissions';
 import { useMutation } from '@tanstack/react-query';
-import { 
-  addCharacteristicAdvancement, 
-  addSkillAdvancement, 
-  deleteAdvancement 
+import {
+  addCharacteristicAdvancement,
+  addSkillAdvancement,
+  deleteAdvancement
 } from '@/app/actions/fighter-advancement';
+import { SKILL_DESCRIPTIONS } from '@/utils/game-data/skill-descriptions';
 import { LuUndo2 } from 'react-icons/lu';
 
 // AdvancementModal Interfaces
@@ -825,45 +826,49 @@ export function AdvancementModal({ fighterId, currentXp, fighterClass, advanceme
 
             {advancementType === 'skill' && selectedCategory && availableAdvancements.length > 0 && (
               <>
-                <div className="relative">
-                  <select
-                    className="w-full p-2 border rounded-md"
-                    value={selectedAdvancement?.id || ''}
-                    onChange={(e) => {
-                      const selected = availableAdvancements.find(adv => adv.id === e.target.value);
-
-                      if (selected) {
-                        setSelectedAdvancement({
-                          ...selected,
-                          xp_cost: 0,
-                          credits_increase: 0,
-                          has_enough_xp: true
-                        });
-                        setSkillAcquisitionType('');
-                        setEditableXpCost(0);
-                        setEditableCreditsIncrease(0);
-                      }
-                    }}
-                  >
-                    <option key="default" value="">Select Skill</option>
-                    {availableAdvancements.map((advancement) => {
-                      const uniqueKey = `${advancement.id}_${advancement.skill_type_id}`;
-                      const isAvailable = advancement.is_available !== false; // Default to true if undefined
-                      return (
-                        <option 
-                          key={uniqueKey} 
-                          value={advancement.id}
-                          disabled={!isAvailable}
-                          style={{ 
-                            color: !isAvailable ? '#9CA3AF' : 'inherit',
-                            fontStyle: !isAvailable ? 'italic' : 'normal'
-                          }}
-                        >
-                          {advancement.stat_change_name}{!isAvailable ? ' (already owned)' : ''}
-                        </option>
-                      );
-                    })}
-                  </select>
+                <div className="max-h-64 overflow-y-auto border rounded-md">
+                  {availableAdvancements.map((advancement) => {
+                    const uniqueKey = `${advancement.id}_${advancement.skill_type_id}`;
+                    const isAvailable = advancement.is_available !== false;
+                    const isSelected = selectedAdvancement?.id === advancement.id;
+                    const skillName = advancement.stat_change_name || '';
+                    const description = SKILL_DESCRIPTIONS[skillName]
+                      || Object.entries(SKILL_DESCRIPTIONS).find(([k]) => k.toLowerCase() === skillName.toLowerCase())?.[1];
+                    return (
+                      <button
+                        key={uniqueKey}
+                        type="button"
+                        disabled={!isAvailable}
+                        onClick={() => {
+                          setSelectedAdvancement({
+                            ...advancement,
+                            xp_cost: 0,
+                            credits_increase: 0,
+                            has_enough_xp: true
+                          });
+                          setSkillAcquisitionType('');
+                          setEditableXpCost(0);
+                          setEditableCreditsIncrease(0);
+                        }}
+                        className={`w-full text-left px-3 py-2 border-b last:border-b-0 transition-colors
+                          ${isSelected ? 'bg-primary/20 border-primary/30' : 'hover:bg-muted'}
+                          ${!isAvailable ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+                        `}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className={`text-sm font-medium ${isSelected ? 'text-primary' : ''}`}>
+                            {skillName}
+                          </span>
+                          {!isAvailable && (
+                            <span className="text-xs text-muted-foreground italic">(already owned)</span>
+                          )}
+                        </div>
+                        {description && (
+                          <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{description}</p>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
 
                 {selectedAdvancement && (

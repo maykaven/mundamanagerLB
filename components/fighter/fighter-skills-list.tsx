@@ -8,11 +8,12 @@ import { createClient } from '@/utils/supabase/client';
 import { List } from "@/components/ui/list";
 import { UserPermissions } from '@/types/user-permissions';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { 
-  addSkillAdvancement, 
-  deleteAdvancement 
+import {
+  addSkillAdvancement,
+  deleteAdvancement
 } from '@/app/actions/fighter-advancement';
 import { LuTrash2 } from 'react-icons/lu';
+import { SKILL_DESCRIPTIONS } from '@/utils/game-data/skill-descriptions';
 
 // Interface for individual skill when displayed in table
 interface Skill {
@@ -331,29 +332,38 @@ export function SkillModal({ fighterId, onClose, onSkillAdded, isSubmitting, onS
       {selectedCategory && skillsData && (
         <div className="space-y-2">
           <label className="text-sm font-medium">Skill</label>
-          <select
-            value={selectedSkill}
-            onChange={(e) => setSelectedSkill(e.target.value)}
-            className="w-full p-2 border rounded"
-          >
-            <option key="placeholder-skill" value="">Select a skill</option>
+          <div className="max-h-64 overflow-y-auto border rounded">
             {skillsData.skills.map((skill) => {
               const isAvailable = skill.available;
+              const isSelected = selectedSkill === skill.skill_id;
+              const description = SKILL_DESCRIPTIONS[skill.skill_name]
+                || Object.entries(SKILL_DESCRIPTIONS).find(([k]) => k.toLowerCase() === skill.skill_name.toLowerCase())?.[1];
               return (
-                <option 
-                  key={skill.skill_id} 
-                  value={skill.skill_id}
+                <button
+                  key={skill.skill_id}
+                  type="button"
                   disabled={!isAvailable}
-                  style={{ 
-                    color: !isAvailable ? '#9CA3AF' : 'inherit',
-                    fontStyle: !isAvailable ? 'italic' : 'normal'
-                  }}
+                  onClick={() => setSelectedSkill(skill.skill_id)}
+                  className={`w-full text-left px-3 py-2 border-b last:border-b-0 transition-colors
+                    ${isSelected ? 'bg-primary/20 border-primary/30' : 'hover:bg-muted'}
+                    ${!isAvailable ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
+                  `}
                 >
-                  {skill.skill_name}{!isAvailable ? ' (already owned)' : ''}
-                </option>
+                  <div className="flex items-center gap-2">
+                    <span className={`text-sm font-medium ${isSelected ? 'text-primary' : ''}`}>
+                      {skill.skill_name}
+                    </span>
+                    {!isAvailable && (
+                      <span className="text-xs text-muted-foreground italic">(already owned)</span>
+                    )}
+                  </div>
+                  {description && (
+                    <p className="text-xs text-muted-foreground mt-0.5 leading-snug">{description}</p>
+                  )}
+                </button>
               );
             })}
-          </select>
+          </div>
         </div>
       )}
     </div>

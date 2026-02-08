@@ -52,6 +52,7 @@ export const WEAPON_TRAITS: Record<string, string> = {
   'Scattershot': 'If hit, inflict D6 wound rolls instead of 1.',
   'Seismic': 'Wound roll of 6 ignores saves. Target always Pinned. Vehicles test Hnd or Lose Control.',
   'Sever': 'Injury rolls are automatically Out of Action.',
+  'Assault Shield': 'Compact combat shield. +2 save vs Melee, +1 save vs Ranged in front arc. Can be used alongside a pistol.',
   'Shield': '+2 save vs Melee, +1 save vs Ranged from front 90°.',
   'Shield Breaker': 'Ignores shields. Field armors roll twice, apply lowest.',
   'Shock': 'On hit roll of 6, the attack automatically wounds.',
