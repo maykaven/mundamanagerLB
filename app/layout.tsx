@@ -16,9 +16,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Footer from "./footer";
 
-const defaultUrl = process.env.NODE_ENV === 'development'
-  ? "http://localhost:3000"
-  : "https://www.mundamanager.com";
+const defaultUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.NODE_ENV === 'development'
+    ? "http://localhost:3000"
+    : "https://mundamanager-lb.vercel.app";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -30,7 +32,7 @@ const inter = Inter({
 // Metadata constants
 const SITE_TITLE = "Linebreakers";
 const SITE_DESCRIPTION = "Necromunda Campaign Manager with AI-powered narrative generation";
-const SITE_IMAGE = '/images/hero-bg.png';
+const SITE_IMAGE = '/images/og-image.jpg';
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
