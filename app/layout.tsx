@@ -30,7 +30,7 @@ const inter = Inter({
 // Metadata constants
 const SITE_TITLE = "Linebreakers";
 const SITE_DESCRIPTION = "Necromunda Campaign Manager with AI-powered narrative generation";
-const SITE_IMAGE = '/images/logo.png';
+const SITE_IMAGE = '/images/hero-bg.png';
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
@@ -47,7 +47,7 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.ico', sizes: '32x32' },
       { url: '/images/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/images/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/images/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
@@ -62,8 +62,8 @@ export const metadata = {
     images: [
       {
         url: SITE_IMAGE,
-        width: 192,
-        height: 192,
+        width: 1200,
+        height: 630,
         alt: SITE_TITLE,
       },
     ],
@@ -71,7 +71,7 @@ export const metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     images: [SITE_IMAGE],
